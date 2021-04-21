@@ -23,7 +23,10 @@ resource = "astro_details"
 client = sdk.VRClient(userID, apiKey)
 
 # call horoscope apis
-responseData = client.call(resource, data['date'], data['month'], data['year'], data['hour'], data['minute'], data['latitude'], data['longitude'], data['timezone'])
+responseData = client.call(
+    resource, data['date'], data['month'], data['year'],
+    data['hour'], data['minute'], data['latitude'],
+    data['longitude'], data['timezone'])
 
 loaded_json = json.loads(responseData.text)
 

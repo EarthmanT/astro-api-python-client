@@ -38,4 +38,3 @@ matchMakingData = client.matchMakingCall(resource, maleData, femaleData)
 
 # print response data recieved from api
 print(matchMakingData)
-

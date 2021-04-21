@@ -17,7 +17,15 @@ class VRClient:
         resp = requests.post(url, data=data, auth=(self.userID, self.apiKey))
         return resp
 
-    def packageHoroData(self, date, month, year, hour, minute, latitude, longitude, timezone):
+    def packageHoroData(self,
+                        date,
+                        month,
+                        year,
+                        hour,
+                        minute,
+                        latitude,
+                        longitude,
+                        timezone):
         return {
             'day': date,
             'month': month,
@@ -62,8 +70,18 @@ class VRClient:
         tempData = dict(mData.items() + fData.items())
         return tempData
 
-    def call(self, resource, date, month, year, hour, minute, latitude, longitude, timezone):
-        data = self.packageHoroData(date, month, year, hour, minute, latitude, longitude, timezone)
+    def call(self,
+             resource,
+             date,
+             month,
+             year,
+             hour,
+             minute,
+             latitude,
+             longitude,
+             timezone):
+        data = self.packageHoroData(
+            date, month, year, hour, minute, latitude, longitude, timezone)
         return self.getResponse(resource, data)
 
     def matchMakingCall(self, resource, maleBirthData, femaleBirthData):
